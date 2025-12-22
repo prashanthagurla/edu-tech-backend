@@ -1,14 +1,15 @@
 package com.ap.edu_tech.controller;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.ap.edu_tech.model.Users;
 import com.ap.edu_tech.service.UsersService;
 
-@RestController("/api/auth")
+@CrossOrigin(origins = "*")
+@RestController()
+@RequestMapping("/api/auth")
+
 public class AuthController {
 	private UsersService usersService;
 	
@@ -22,10 +23,10 @@ public class AuthController {
 
 
 	@PostMapping("/signUp")
-	public ResponseEntity<String> signUp(@RequestBody Users newUser) {
+	public ResponseEntity<Users> signUp(@RequestBody authDTO newUser) {
 		Users savedUser = usersService.signUp(newUser);
 
-		return null;
+		return ResponseEntity.ok(savedUser);
 
 	}
 
