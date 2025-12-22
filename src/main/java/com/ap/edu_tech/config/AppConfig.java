@@ -14,7 +14,7 @@ public class AppConfig {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration config = new CorsConfiguration();
-		config.setAllowedOrigins(List.of("*"));
+		config.addAllowedOriginPattern("http://localhost:4200,");
 		config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 		config.setAllowedHeaders(List.of("*"));
 		config.setAllowCredentials(true);
@@ -23,4 +23,8 @@ public class AppConfig {
 		source.registerCorsConfiguration("/**", config);
 		return source;
 	}
+	
+	
+	
+	
 }

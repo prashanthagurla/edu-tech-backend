@@ -1,5 +1,5 @@
 package com.ap.edu_tech.dto;
-public class authDTO {
+public class AuthDTO {
     private Long id;
 
     private String fullName;
@@ -12,19 +12,22 @@ public class authDTO {
 
     private String role;
 
-    public authDTO() {
-    }
+   
+    public AuthDTO() {
+		super();
+	}
 
-    public authDTO(Long id, String fullName, String email, String password, String confirmPassword, String role) {
-        this.id = id;
-        this.fullName = fullName;
-        this.email = email;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
-        this.role = role;
-    }
+	public AuthDTO(Long id, String fullName, String email, String password, String confirmPassword, String role) {
+		super();
+		this.id = id;
+		this.fullName = fullName;
+		this.email = email;
+		this.password = password;
+		this.confirmPassword = confirmPassword;
+		this.role = role;
+	}
 
-    public Long getId() {
+	public Long getId() {
         return id;
     }
 

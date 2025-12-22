@@ -21,7 +21,6 @@ public class Users {
 	
 	private String password;
 
-	private String confirmPassword;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	private Set<RoleModel> role;
@@ -31,12 +30,11 @@ public class Users {
 		super();
 	}
 
-	public Users(Long id, String fullName, String email, String password, String confirmPassword, Set<RoleModel> role) {
+	public Users(Long id, String fullName, String email, String password,  Set<RoleModel> role) {
 		this.id = id;
 		this.fullName = fullName;
 		this.email = email;
 		this.password = password;
-		this.confirmPassword = confirmPassword;
 		this.role = role;
 	}
 
@@ -70,14 +68,6 @@ public class Users {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
 	}
 
 	public Set<RoleModel> getRole() {
